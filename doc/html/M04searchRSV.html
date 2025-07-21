@@ -1,0 +1,175 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予約検索</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Noto+Serif+JP:wght@200..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/sanitize.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="main-box">
+        <div class="window checkIn">
+            <div class="window-header">予約検索</div>
+            <div class="window-display hight250">
+                <div class="display-forms">
+                    <div class="forms-block">
+                        <div class="search-form">
+                            <label for="last-name">姓：</label>
+                            <input type="text" id="last-name">
+                        </div>
+                        <div class="search-form">
+                            <label for="first-name">名：</label>
+                            <input type="text" id="first-name">
+                        </div>
+                    </div>
+                    <div class="forms-block">
+                        <div class="search-form">
+                            <label for="rsv-num">予約番号：</label>
+                            <input type="text" id="rsv-num">
+                        </div>
+                        <div class="search-form">
+                            <label for="agent">エージェント：</label>
+                            <input type="text" id="agent">
+                        </div>
+                    </div>
+                    <div class="forms-block">
+                        <div class="search-form">
+                            <label for="room-num">部屋番号：</label>
+                            <input type="text" id="room-num">
+                        </div>
+                        <div class="search-form">
+                            <label for="party-num">パーティ番号：</label>
+                            <input type="text" id="party-num">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-box in-display">
+                    <button class="window-btn">検索</button>
+                </div>
+            </div>
+            <div class="table-wrapper height600">
+                <table class="base-table" id="base-table">
+                    <thead>
+                        <tr>
+                        <th class="clm5-1">名前</th>   
+                        <th class="clm5-2">部屋番号</th>
+                        <th class="clm5-3">パーティ番号</th>
+                        <th class="clm5-4">エージェント</th>
+                        <th class="clm5-5">予約番号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><div class="cell">山田 太郎</div></td>
+                        <td><div class="cell">501</div></td>
+                        <td><div class="cell">P001</div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell">R001</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">山田 耕造</div></td>
+                        <td><div class="cell">502</div></td>
+                        <td><div class="cell">P001</div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell">R002</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503</div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell">Expedia</div></td>
+                        <td><div class="cell">R003</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">503503503503503503503</div></td>
+                        <td><div class="cell">P1111111111111111</div></td>
+                        <td><div class="cell">ExpediaExpediaExpediaExpediaExpedia</div></td>
+                        <td><div class="cell">R00333333333333333333333</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/M01header.js"></script>
+    <script src="../js/U01moveWindow.js"></script>
+    <script src="../js/M04searchRSV.js"></script>
+</body>
+</html>

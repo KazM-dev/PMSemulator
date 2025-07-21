@@ -1,0 +1,98 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チェックアウト</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Noto+Serif+JP:wght@200..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/sanitize.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="main-box">
+        <div class="window">
+            <div class="window-header">会計</div>
+            <div class="window-display hight200">
+                <div class="display-forms">
+                    <div class="search-form">
+                        <label for="room-num">部屋番号：</label>
+                        <input type="text" id="room-num">
+                    </div>
+                    <div class="search-form">
+                        <label for="party-num">パーティ番号：</label>
+                        <input type="text" id="party-num">
+                    </div>
+                    <div class="search-form">
+                        <label for="agent">エージェント：</label>
+                        <input type="text" id="agent">
+                    </div>
+                </div>
+                <div class="radio-box in-display">
+                    <label class="radio-block">
+                        <input type="radio" name="checkOut-status" value="stay" checked>未チェックアウト
+                    </label>
+                    <label class="radio-block">
+                        <input type="radio" name="checkOut-status" value="checkedOut">チェックアウト済
+                    </label>
+                    <label class="radio-block">
+                        <input type="radio" name="checkOut-status" value="all">ALL
+                    </label>
+                </div>
+                <div class="button-box in-display">
+                    <button class="window-btn">検索</button>
+                </div>
+            </div>
+            <div class="table-wrapper height500">
+                <table class="base-table" id="base-table">
+                    <thead>
+                        <tr>
+                        <th class="clm5-1">部屋番号</th>
+                        <th class="clm5-2">名前</th>   
+                        <th class="clm5-3">支払残高</th>
+                        <th class="clm5-4">パーティ番号</th>
+                        <th class="clm5-5">エージェント</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><div class="cell">501</div></td>
+                        <td><div class="cell">山田 太郎</div></td>
+                        <td><div class="cell">32000</div></td>
+                        <td><div class="cell">P001</div></td>
+                        <td><div class="cell">Rakuten</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">32000</div></td>
+                        <td><div class="cell">山田 耕造</div></td>
+                        <td><div class="cell">21000</div></td>
+                        <td><div class="cell">P001</div></td>
+                        <td><div class="cell">Rakuten</div></td>
+                        </tr>
+                        <tr>
+                        <td><div class="cell">503</div></td>
+                        <td><div class="cell">香川 真司 香川 真司  香川 真司</div></td>
+                        <td><div class="cell">49000</div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell">Expedia</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="button-box under-window">
+                <button class="window-btn" id="checkOut-btn">チェックアウト</button>
+                <button class="window-btn">キャンセルチェックアウト</button>
+            </div>
+        </div>
+        <div id="billing-container"></div>
+        </div>
+    </div>
+    <script src="../js/M01header.js"></script>
+    <script src="../js/U01moveWindow.js"></script>
+    <script src="../js/M03checkOut.js"></script>
+    <script src="../js/S01billing.js"></script>
+</body>
+</html>
