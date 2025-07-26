@@ -1,33 +1,32 @@
-const displays = ["checkIn", "checkOut", "searchRSV", "billing", "code-list"];
-let clickedDisplay = "";
-
 document.body.addEventListener('click', (e) => {
     const td = e.target.closest('td');
     if (!td) return;
-    
+    if (td.classList.contains('table-highlight')) return;
+
     const clickedWindow = td.closest('.window');
-    for (const display of displays) {
-        if (clickedWindow.classList.contains(display)) {
-            clickedDisplay = display;
-            break;
-        }
-    }
+    clearTable(clickedWindow);
+    
+    const clickedRow = td.closest('tr');
+    clickedRow.querySelectorAll('td').forEach(cell => {
+        cell.classList.add('table-highlight');
+    });
+});
 
-    if (td.classList.contains('table-highlight')) {
-        return;
-    }
+document.body.addEventListener('click', (e) => {
+    if (!e.target.id.endsWith('close-btn')) return;
+    const clickedWindow = e.target.closest('.window');
+    clearTable(clickedWindow);
+});
 
-    const tables = clickedWindow.querySelectorAll(`.${clickedDisplay} .base-table`);
+function clearTable(clickedWindow) {
+    const tables = clickedWindow.querySelectorAll('.base-table');
     tables.forEach(table => {
         table.querySelectorAll('tr').forEach(row => {
             row.querySelectorAll('td').forEach(cell => {
                 cell.classList.remove('table-highlight');
             });
         });
+        const radios = table.querySelectorAll('input[type="radio"]');
+        if (radios) radios.forEach(radio => radio.checked = false);
     });
-
-    const clickedRow = td.closest('tr');
-    clickedRow.querySelectorAll('td').forEach(cell => {
-        cell.classList.add('table-highlight');
-    });
-});
+}
