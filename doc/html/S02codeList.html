@@ -1,0 +1,71 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>  
+    <div class="window code-list">
+        <div class="window-header">コード一覧</div>
+        <div class="table-wrapper" id="payment-list">
+            <table class="base-table" id="base-table">
+                <thead>
+                    <tr>
+                    <th class="clm2-1"></th>   
+                    <th class="clm2-2">項目</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><div class="cell">
+                    <input type="radio" id="cash" name="payment" class="radio-input">
+                    <label for="cash" class="radio-label"></label>
+                    </div></td>
+                    <td>
+                    <div class="cell"><label for="cash">現金</label></div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><div class="cell">
+                    <input type="radio" id="vm" name="payment" class="radio-input">
+                    <label for="vm" class="radio-label"></label>
+                    </div></td>
+                    <td>
+                    <div class="cell"><label for="vm">VISA/Master</label></div>
+                    </td>
+                    <tr>
+                    <td><div class="cell">
+                    <input type="radio" id="amex" name="payment" class="radio-input">
+                    <label for="amex" class="radio-label"></label>
+                    </div></td>
+                    <td>
+                    <div class="cell"><label for="amex">AEMX</label></div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><div class="cell">
+                    <input type="radio" id="cl" name="payment" class="radio-input">
+                    <label for="cl" class="radio-label"></label>
+                    </div></td>
+                    <td>
+                    <div class="cell"><label for="cl">売掛</label></div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><div class="cell">
+                    <input type="radio" id="wt" name="payment" class="radio-input">
+                    <label for="wt" class="radio-label"></label>
+                    </div></td>
+                    <td>
+                    <div class="cell"><label for="wt">銀行振込</label></div>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="button-box under-window">
+            <button class="window-btn">保存</button>
+            <button class="window-btn" id="code-list-close-btn">閉じる</button>
+        </div>
+    </div>
+</body>
+</html>

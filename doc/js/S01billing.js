@@ -1,3 +1,5 @@
+sessionStorage.setItem("displayID", "S01");
+
 fetch('../html/S01billing.html')
   .then(response => response.text())
   .then(html => {
@@ -17,6 +19,14 @@ fetch('../html/S01billing.html')
             });
           }
         });
+      } else if (clickedElement.id === 'payment-btn') {
+        document.getElementById('payment-modal').style.display = 'flex'
+        document.getElementById('payment-container').style.display = 'flex'
+        document.getElementById('payment-list').style.display = 'flex'
+        
+      } else if (clickedElement.id === 'billing-close-btn') {
+        document.getElementById('billing-modal').style.display = 'none'
+        document.getElementById('billing-container').style.display = 'none'
       }
     });
 });

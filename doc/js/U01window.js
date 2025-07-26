@@ -1,5 +1,4 @@
 const windowHeaders = document.querySelectorAll('.window-header');
-
 let offsetX = 0;
 let offsetY = 0;
 let isDragging = false;
@@ -13,7 +12,7 @@ document.addEventListener("mousedown", (e) => {
     offsetX = e.clientX - currentWindow.offsetLeft;
     offsetY = e.clientY - currentWindow.offsetTop;
     currentWindow.style.cursor = "grabbing";
-})
+});
     
 document.addEventListener("mousemove", (e) => {
     if (!isDragging && !currentWindow) return;
@@ -27,5 +26,10 @@ document.addEventListener("mouseup", () => {
     if (currentWindow) {
         currentWindow.style.cursor = "default";
         currentWindow = null;
-    }
+    };
+});
+
+const closeBtn = document.getElementById('window-close-btn');
+    closeBtn.addEventListener("click", () => {
+        window.close();
 });

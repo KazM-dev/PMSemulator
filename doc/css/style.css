@@ -142,12 +142,16 @@ windowエリア：機能ウィンドウ定義
     justify-content: space-between;
     height: 140px;
 }
-.window-display .search-form {
+.window-display .display-form {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .window-display input[type="text"] {
+    width: 150px;
+    font-size: 25px;
+}
+.window-display input[type="number"] {
     width: 150px;
     font-size: 25px;
 }
@@ -175,9 +179,9 @@ windowエリア：機能ウィンドウ定義
     display: flex;
     flex-direction: column;
     align-items: end;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 30px;
-    height: 110px;
+    height: 140px;
 }
 .window-btn {
     font-size: 20px;
@@ -252,7 +256,6 @@ table-wrapperエリア：テーブル定義
 .table-wrapper .cell { 
     white-space: nowrap;
     overflow-x: auto;
-    cursor: grab;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -267,10 +270,16 @@ table-wrapperエリア：テーブル定義
     background-color: rgba(51, 118, 199, 0.2);
 }
 
+/* 
+billingエリア：会計定義
+*/
+#billing-modal {
+    z-index: 3;    
+}
 #billing-container {
     display: none;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     justify-content: center;
 }
 .window.billing {
@@ -317,21 +326,89 @@ table-wrapperエリア：テーブル定義
 }
 .billing .button-boxs {
     width: 90%;
-    height: 140px;
     display: flex;
     flex-direction: row;
     padding-left: 45%;
+    padding-top: 30px;
 }
 .billing .button-box.under-window {
     display: flex;
     flex-direction: column;
+    justify-content: start;
     margin-top: 0;
-    height: 100%;
 }
 .billing .under-window .window-btn {
-    margin-top: 30px;
     width: 100%;
-    height: 50%;
+}
+
+/* 
+paymentエリア：精算定義
+*/
+#payment-modal {
+    z-index: 5;    
+}
+#payment-container {
+    display: none;
+    position: absolute;
+    z-index: 6;
+    justify-content: center;
+    top: 30%;
+}
+.window.payment {
+    width: 480px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.payment .window-display {
+    height: 200px;
+}
+.payment .display-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+}
+.payment .button-box {
+    display: flex;
+    justify-content: end;   
+}
+
+/* 
+code-listエリア：コード一覧定義
+*/
+#code-list-modal {
+    z-index: 7;    
+}
+#code-list-container {
+    display: none;
+    position: absolute;
+    z-index: 8;
+    justify-content: center;
+}
+.window.code-list {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+.code-list .table-wrapper {
+    margin-top: 0px;
+    width: 90%;
+}
+.code-list .clm2-1 {
+    width: 3.85%;
+}
+.code-list .button-box {
+    width: 10%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: 40px;
+}
+#payment-list {
+    display: none;
 }
 
 /* 
@@ -343,6 +420,32 @@ label:hover {
 input {
     border: 2px solid;
     border-color: #525252;
+}
+.radio-group {
+  display: flex;
+}
+.radio-input {
+  display: none;
+}
+.radio-label {
+  padding: 0.5em 1em;
+  position: relative;
+}
+.radio-input:checked + .radio-label::before {
+  content: "✔";
+  font-weight: bold;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal-overlay {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
 }
 .height200 {
     height: 200px;

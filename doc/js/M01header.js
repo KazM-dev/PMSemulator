@@ -37,11 +37,11 @@ fetch('../html/M01header.html')
     }
 
     function localFetch(button) {
-      if (button.id === 'checkIn-btn') {
+      if (button.id === 'header-checkIn-btn') {
         window.open('../html/M02checkIn.html', '_blank');
-      } else if (button.id === 'checkOut-btn') {
+      } else if (button.id === 'header-checkOut-btn') {
         window.open('../html/M03checkOut.html', '_blank');
-      } else if (button.id === 'searchRSV-btn') {
+      } else if (button.id === 'header-searchRSV-btn') {
         window.open('../html/M04searchRSV.html', '_blank');
       }
     }

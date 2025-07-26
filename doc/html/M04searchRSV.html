@@ -19,31 +19,31 @@
             <div class="window-display hight250">
                 <div class="display-forms">
                     <div class="forms-block">
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="last-name">姓：</label>
                             <input type="text" id="last-name">
                         </div>
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="first-name">名：</label>
                             <input type="text" id="first-name">
                         </div>
                     </div>
                     <div class="forms-block">
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="rsv-num">予約番号：</label>
                             <input type="text" id="rsv-num">
                         </div>
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="agent">エージェント：</label>
                             <input type="text" id="agent">
                         </div>
                     </div>
                     <div class="forms-block">
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="room-num">部屋番号：</label>
                             <input type="text" id="room-num">
                         </div>
-                        <div class="search-form">
+                        <div class="display-form">
                             <label for="party-num">パーティ番号：</label>
                             <input type="text" id="party-num">
                         </div>
@@ -53,7 +53,7 @@
                     <button class="window-btn">検索</button>
                 </div>
             </div>
-            <div class="table-wrapper height600">
+            <div class="table-wrapper height500">
                 <table class="base-table" id="base-table">
                     <thead>
                         <tr>
@@ -166,10 +166,13 @@
                     </tbody>
                 </table>
             </div>
+            <div class="button-box under-window">
+                <button class="window-btn" id="window-close-btn">閉じる</button>
+            </div>
         </div>
     </div>
     <script src="../js/M01header.js"></script>
-    <script src="../js/U01moveWindow.js"></script>
+    <script src="../js/U01window.js"></script>
     <script src="../js/M04searchRSV.js"></script>
 </body>
 </html>

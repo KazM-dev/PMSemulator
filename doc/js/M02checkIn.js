@@ -1,3 +1,5 @@
+sessionStorage.setItem("displayID", "M02");
+
 document.addEventListener('click', (e) => {
     const clickedElement = e.target;
     if (clickedElement.closest('.base-table td')) {

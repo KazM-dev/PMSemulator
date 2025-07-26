@@ -15,18 +15,18 @@
     <div id="header-container"></div>
     <div class="main-box">
         <div class="window">
-            <div class="window-header">会計</div>
+            <div class="window-header">チェックアウト</div>
             <div class="window-display hight200">
                 <div class="display-forms">
-                    <div class="search-form">
+                    <div class="display-form">
                         <label for="room-num">部屋番号：</label>
                         <input type="text" id="room-num">
                     </div>
-                    <div class="search-form">
+                    <div class="display-form">
                         <label for="party-num">パーティ番号：</label>
                         <input type="text" id="party-num">
                     </div>
-                    <div class="search-form">
+                    <div class="display-form">
                         <label for="agent">エージェント：</label>
                         <input type="text" id="agent">
                     </div>
@@ -84,15 +84,25 @@
             </div>
             <div class="button-box under-window">
                 <button class="window-btn" id="checkOut-btn">チェックアウト</button>
-                <button class="window-btn">キャンセルチェックアウト</button>
+                <button class="window-btn" id="test-dialog">キャンセルチェックアウト</button>
+                <button class="window-btn" id="window-close-btn">閉じる</button>
             </div>
         </div>
-        <div id="billing-container"></div>
+        <div class="modal-overlay" id="billing-modal">
+            <div id="billing-container"></div>
+        </div>
+        <div class="modal-overlay" id="payment-modal">
+            <div id="payment-container"></div>
+        </div>
+        <div class="modal-overlay" id="code-list-modal">
+            <div id="code-list-container"></div>
         </div>
     </div>
     <script src="../js/M01header.js"></script>
-    <script src="../js/U01moveWindow.js"></script>
+    <script src="../js/U01window.js"></script>
     <script src="../js/M03checkOut.js"></script>
     <script src="../js/S01billing.js"></script>
+    <script src="../js/S02codeList.js"></script>
+    <script src="../js/S03payment.js"></script>
 </body>
 </html>
