@@ -342,34 +342,34 @@ billingエリア：会計定義
 }
 
 /* 
-paymentエリア：精算定義
+code-and-numエリア：コード/金額定義
 */
-#payment-modal {
+#code-and-num-modal {
     z-index: 5;    
 }
-#payment-container {
+#code-and-num-container {
     display: none;
     position: absolute;
     z-index: 6;
     justify-content: center;
     top: 30%;
 }
-.window.payment {
+.window.code-and-num {
     width: 480px;
     height: 300px;
     display: flex;
     flex-direction: column;
 }
-.payment .window-display {
+.code-and-num .window-display {
     height: 200px;
 }
-.payment .display-form {
+.code-and-num .display-form {
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: start;
 }
-.payment .button-box {
+.code-and-num .button-box {
     display: flex;
     justify-content: end;   
 }
@@ -410,6 +410,9 @@ code-listエリア：コード一覧定義
 #payment-list {
     display: none;
 }
+#post-list {
+    display: none;
+}
 
 /* 
 共通レイアウトエリア
@@ -418,6 +421,12 @@ label:hover {
     cursor: pointer;
 }
 input {
+    border: 2px solid;
+    border-color: #525252;
+}
+select {
+    width: 150px;
+    font-size: 25px;
     border: 2px solid;
     border-color: #525252;
 }

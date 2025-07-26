@@ -40,7 +40,7 @@ fetch('../html/M01header.html')
       if (button.id === 'header-checkIn-btn') {
         window.open('../html/M02checkIn.html', '_blank');
       } else if (button.id === 'header-checkOut-btn') {
-        window.open('../html/M03checkOut.html', '_blank');
+        window.open('../html/M02checkOut.html', '_blank');
       } else if (button.id === 'header-searchRSV-btn') {
         window.open('../html/M04searchRSV.html', '_blank');
       }
