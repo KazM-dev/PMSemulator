@@ -28,8 +28,3 @@ document.addEventListener("mouseup", () => {
         currentWindow = null;
     };
 });
-
-const closeBtn = document.getElementById('window-close-btn');
-    closeBtn.addEventListener("click", () => {
-        window.close();
-});

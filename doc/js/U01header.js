@@ -1,4 +1,4 @@
-fetch('../html/M01header.html')
+fetch('../html/U01header.html')
   .then(response => response.text())
   .then(html => {
     document.getElementById('header-container').innerHTML = html;
@@ -10,7 +10,6 @@ fetch('../html/M01header.html')
           const headerMenuId = clickedElement.dataset.target;
           displayHeaderMenu(headerMenuId);
         } else if (clickedElement.closest('.header-menu')) {
-          localFetch(clickedElement);
           displayHeaderMenu(NOTHING);
         } else {
           displayHeaderMenu(NOTHING);
@@ -33,16 +32,6 @@ fetch('../html/M01header.html')
             el.style.display = 'none';
           }
         });
-      }
-    }
-
-    function localFetch(button) {
-      if (button.id === 'header-checkIn-btn') {
-        window.open('../html/M02checkIn.html', '_blank');
-      } else if (button.id === 'header-checkOut-btn') {
-        window.open('../html/M02checkOut.html', '_blank');
-      } else if (button.id === 'header-searchRSV-btn') {
-        window.open('../html/M04searchRSV.html', '_blank');
       }
     }
 });

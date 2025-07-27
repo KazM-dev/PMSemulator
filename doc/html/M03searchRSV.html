@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チェックイン</title>
+    <title>予約検索</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,8 @@
 <body>
     <div id="header-container"></div>
     <div class="main-box">
-        <div class="window checkIn">
-            <div class="window-header">到着</div>
+        <div class="window searchRSV">
+            <div class="window-header">予約検索</div>
             <div class="window-display">
                 <div class="display-forms">
                     <div class="forms-block">
@@ -30,8 +30,8 @@
                     </div>
                     <div class="forms-block">
                         <div class="display-form">
-                            <label for="party-num">パーティ番号：</label>
-                            <input type="text" id="party-num">
+                            <label for="rsv-num">予約番号：</label>
+                            <input type="text" id="rsv-num">
                         </div>
                         <div class="display-form">
                             <label for="agent">エージェント：</label>
@@ -42,6 +42,10 @@
                         <div class="display-form">
                             <label for="room-num">部屋番号：</label>
                             <input type="text" id="room-num">
+                        </div>
+                        <div class="display-form">
+                            <label for="party-num">パーティ番号：</label>
+                            <input type="text" id="party-num">
                         </div>
                     </div>
                 </div>
@@ -163,13 +167,13 @@
                 </table>
             </div>
             <div class="button-box under-window">
-                <button class="window-btn">チェックイン</button>
-                <button class="window-btn" id="window-close-btn">閉じる</button>
+                <button class="window-btn" id="searchRSV-close-btn">閉じる</button>
             </div>
         </div>
     </div>
-    <script src="../js/M01header.js"></script>
-    <script src="../js/U01window.js"></script>
-    <script src="../js/U02table.js"></script>
+    <script src="../js/U01header.js"></script>
+    <script src="../js/U02windowDisplay.js"></script>
+    <script src="../js/U03windowHeaderDrag.js"></script>
+    <script src="../js/U04table.js"></script>
 </body>
 </html>

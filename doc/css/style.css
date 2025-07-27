@@ -273,13 +273,9 @@ table-wrapperエリア：テーブル定義
 /* 
 billingエリア：会計定義
 */
-#billing-modal {
-    z-index: 3;    
-}
 #billing-container {
     display: none;
     position: absolute;
-    z-index: 4;
     justify-content: center;
 }
 .window.billing {
@@ -342,64 +338,56 @@ billingエリア：会計定義
 }
 
 /* 
-code-and-numエリア：コード/金額定義
+codeAndNumエリア：コード/金額定義
 */
-#code-and-num-modal {
-    z-index: 5;    
-}
-#code-and-num-container {
+#codeAndNum-container {
     display: none;
     position: absolute;
-    z-index: 6;
     justify-content: center;
     top: 30%;
 }
-.window.code-and-num {
+.window.codeAndNum {
     width: 480px;
     height: 300px;
     display: flex;
     flex-direction: column;
 }
-.code-and-num .window-display {
+.codeAndNum .window-display {
     height: 200px;
 }
-.code-and-num .display-form {
+.codeAndNum .display-form {
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: start;
 }
-.code-and-num .button-box {
+.codeAndNum .button-box {
     display: flex;
     justify-content: end;   
 }
 
 /* 
-code-listエリア：コード一覧定義
+codeListエリア：コード一覧定義
 */
-#code-list-modal {
-    z-index: 7;    
-}
-#code-list-container {
+#codeList-container {
     display: none;
     position: absolute;
-    z-index: 8;
     justify-content: center;
 }
-.window.code-list {
+.window.codeList {
     width: 800px;
     height: 800px;
     display: flex;
     flex-direction: column;
 }
-.code-list .table-wrapper {
+.codeList .table-wrapper {
     margin-top: 0px;
     width: 90%;
 }
-.code-list .clm2-1 {
+.codeList .clm2-1 {
     width: 3.85%;
 }
-.code-list .button-box {
+.codeList .button-box {
     width: 10%;
     width: 90%;
     display: flex;
@@ -412,6 +400,32 @@ code-listエリア：コード一覧定義
 }
 #post-list {
     display: none;
+}
+
+/* 
+optionエリア：オプションメニュー定義
+*/
+#option-container {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    top: 30%;
+}
+#billing-option {
+    width: 450px;
+    height: 270px;
+}
+.option .clm2-row3 {
+    display: flex;
+    flex-direction: row;
+}
+.clm2-row3 .button-box {
+    width: 50%;
+    height: 33%;
+}
+.clm2-row3 .window-btn {
+    width: 100%;
+    height: 100%;
 }
 
 /* 
@@ -455,6 +469,24 @@ select {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0);
+}
+.z-index3 {
+    z-index: 3;
+}
+.z-index4 {
+    z-index: 4;
+}
+.z-index5 {
+    z-index: 5;
+}
+.z-index6 {
+    z-index: 6;
+}
+.z-index7 {
+    z-index: 7;
+}
+.z-index8 {
+    z-index: 8;
 }
 .height200 {
     height: 200px;
