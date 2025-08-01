@@ -1,33 +1,40 @@
+import { PAGEID } from './consts.js';
 import { initHeader } from './utils/headerUtils.js';
-import { initWindowDisplay } from './utils/windowDisplay.js';
+import { initWindowDisplay, loadSubWindowHTMLs } from './utils/windowDisplay.js';
 import { initWindowDrag } from './utils/windowHeaderDrag.js';
+import { setHeaderMStr } from './utils/domUtils.js';
 
-const pageId = document.body.dataset.page;
 initHeader();
 initWindowDisplay();
 initWindowDrag();
 
-switch (pageId) {
-  case "index":
-    break;
-
-  case "M01checkIn":
-    import('./utils/tableUtils.js').then(module => module.initTable());
-    break;
-
-  case "M02checkOut":
-    import('./utils/tableUtils.js').then(module => module.initTable());
-    import('./pages/M02checkOut.js').then(module => module.initCheckOut());
-    import('./pages/S01billing.js').then(module => module.initBilling());
-    import('./pages/S02codeAndNum.js').then(module => module.initCodeAndNum());
-    import('./pages/S03codeList.js').then(module => module.initCodeList());
-    import('./pages/S04option.js').then(module => module.initOption());
-    break;  
-    
-  case "M03searchRSV":
-    import('./utils/tableUtils.js').then(module => module.initTable());
-    break;  
-
-  default:
-    console.warn("No page module found for:", pageId);
-}
+(async () => {
+  const pageId = document.body.dataset.page;
+  switch (pageId) {
+    case PAGEID.INDEX:
+      break;
+      
+    case PAGEID.CHECKIN:
+      setHeaderMStr(pageId);
+      import('./utils/tableUtils.js').then(module => module.initTable());
+      break;
+      
+    case PAGEID.CHECKOUT:
+      setHeaderMStr(pageId);
+      await loadSubWindowHTMLs(pageId);
+      import('./utils/tableUtils.js').then(module => module.initTable());
+      import(`./pages/${PAGEID.CHECKOUT}.js`).then(module => module.initCheckOut());
+      import(`./pages/${PAGEID.BILLING}.js`).then(module => module.initBilling());
+      import(`./pages/${PAGEID.CODEANDNUM}.js`).then(module => module.initCodeAndNum());
+      import(`./pages/${PAGEID.OPTION}.js`).then(module => module.initOption());
+      break;  
+      
+    case PAGEID.SEARCHRSV:
+      setHeaderMStr(pageId);
+      import('./utils/tableUtils.js').then(module => module.initTable());
+      break;  
+      
+    default:
+      console.warn("No page module found for:", pageId);
+    }
+})();

@@ -1,35 +1,23 @@
-import { CONSTS } from '../consts.js';
-import { observeElement } from '../utils/eventUtile.js';
-import { getInnerHtml, selector, getElement, hide, showFlex } from '../utils/domUtils.js';
+import { BTN } from '../consts.js';
+import { WINDOW_S, HEADER_S_STR } from '../consts.js';
+import { selector, getElement, hide, showFlex} from '../utils/domUtils.js';
 
 export function initBilling() {
-  fetch('../html/S01billing.html')
-    .then(response => response.text())
-    .then(html => {
-      getInnerHtml('billing-container', html);
-      const elementArr = [selector("#codeAndNum-container"), ""];
-      
-      const paymentBtn = getElement('codeAndNum-payment-open-btn');
-      paymentBtn.addEventListener('click', () =>{
-        elementArr[1] = CONSTS.PAYMENT_STRING;
-        observeElement(elementArr, (elementArr) => windowHeaderUpdate(elementArr));
-        showFlex(getElement('select-window'));
-        sessionStorage.setItem("clickedBtn", CONSTS.PAYMENT_BTN);
-      });
-      
-      const postBtn = document.getElementById('codeAndNum-post-open-btn');
-      postBtn.addEventListener('click', () =>{
-        elementArr[1] = CONSTS.POST_STRING;
-        observeElement(elementArr, (elementArr) => windowHeaderUpdate(elementArr));
-        hide(getElement('select-window'));
-        sessionStorage.setItem("clickedBtn", CONSTS.POST_BTN);
-      });
+  const windowHeader = selector('.codeAndNum .window-header');
+
+  const paymentBtn = getElement('codeAndNum-payment-open-btn');
+  paymentBtn.addEventListener('click', () =>{
+    const displayString = HEADER_S_STR[WINDOW_S.CODEANDNUM].PAYMENT;
+    windowHeader.textContent = displayString;
+    showFlex(getElement('select-window'));
+    sessionStorage.setItem("clickedBtn", BTN.PAYMENT);
   });
   
-  function windowHeaderUpdate (elementArr) {
-    const container = elementArr[0];
-    const displayString = elementArr[1];
-    const windowHeader = container.querySelector(".window-header");
+  const postBtn = document.getElementById('codeAndNum-post-open-btn');
+  postBtn.addEventListener('click', () =>{
+    const displayString = HEADER_S_STR[WINDOW_S.CODEANDNUM].POST;
     windowHeader.textContent = displayString;
-  }
+    hide(getElement('select-window'));
+    sessionStorage.setItem("clickedBtn", BTN.POST);
+  });
 }

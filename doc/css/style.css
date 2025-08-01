@@ -403,6 +403,22 @@ codeListエリア：コード一覧定義
 }
 
 /* 
+inputFormエリア：フォームウィンドウ定義
+*/
+#inputForm-container {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    top: 30%;
+}
+.window.inputForm {
+    width: 480px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
 optionエリア：オプションメニュー定義
 */
 #option-container {

@@ -1,3 +1,5 @@
+import { HEADER_M_STR, WINDOW_S, HEADER_S_STR } from "../consts.js";
+
 export function getElement(id) {
   const el = document.getElementById(id);
   return el;
@@ -62,11 +64,36 @@ export function isCContains(el, className) {
   return el.classList.contains(className);
 }
 
-export function matchIdWithClass(elId, classNames) {
-  for (const className of classNames) {
-    if (elId.startsWith(className)) {
-        return className;
+export function matchMapStartWithId(elId, map) {
+  for (const [key, value] of Object.entries(map)) {
+    if (elId.startsWith(value)) {
+        return value;
       };
     };
   return "";
+}
+
+export function setHeaderMStr(argPageId) {
+  for (const [pageId,  displayString] of Object.entries(HEADER_M_STR)) {
+    if (argPageId === pageId) {
+      const windowHeader = selector(".window-header");
+      windowHeader.textContent = displayString;
+      return;  
+    }
+  }
+}
+
+export function setHeaderSStr(windowName) {
+  Object.values(WINDOW_S).forEach(valueName => {
+    if (windowName === valueName) { 
+      const windowHeader
+      = selector(`.${windowName} .window-header`);
+      if (typeof HEADER_S_STR[windowName] === "string") {
+        windowHeader.textContent = HEADER_S_STR[windowName];
+        return;
+      }
+      windowHeader.textContent = "";
+      return;
+    }
+  });
 }
